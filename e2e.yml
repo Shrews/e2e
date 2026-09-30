@@ -1,0 +1,83 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+
+################################
+# DWCODE: invalid_inventory_name
+################################
+#    - name: invalid_inventory_varname
+#      debug:
+#         msg: "{{ hostvars[inventory_hostname].true }}"
+
+#############################################
+# DWCODE: task_action_mapping (medium, EXTRA)
+#############################################
+#    - name: "`action` keyword"
+#      action:
+#        module: debug
+
+#############################################
+# DWCODE: task_args_empty
+# DWCODE: task_args_merge (medium, EXTRA)
+#############################################
+#    - name: "task_args_empty and `key=value` with `args`"
+#      debug: msg="hi"
+#      args:
+
+###################################
+# DWCODE: bool_filter_invalid_value
+###################################
+#     - name: bool_filter_invalid_value
+#       debug:
+#         msg: "{{ {} | bool }}"
+
+##############################
+# DWCODE: from_yaml_non_string
+##############################
+#    - name: from_yaml_non_string
+#      debug:
+#        msg: "{{ 1 | from_yaml }}"
+
+##################################
+# DWCODE: from_yaml_all_non_string
+##################################
+#    - name: from_yaml_all_non_string
+#      debug:
+#        msg: "{{ 1 | from_yaml_all }}"
+
+
+#####################################
+# DWCODE: templar_available_variables
+# DWCODE: templar_loader
+# DWCODE: templar_environment
+#####################################
+#    - name: templar_available_variables
+#      debug:
+#        msg: "{{ lookup('mylookup') }}"
+
+###########################
+# DWCODE: conditional_empty       TEST ME!!
+###########################
+#    - name: conditional_empty
+#      debug:
+#        msg: "test"
+#      when: ""
+
+##########################
+# DWCODE: test_non_boolean
+##########################
+
+#    - name: test_non_boolean
+#      debug:
+#        msg: "Passed"
+#      when: "'bar' is foo_string"
+
+##########################################
+# DWCODE: unknown_type_encountered_handler     TEST ME!!
+##########################################
+
+    - name: unknown_type_encountered_handler
+      debug:
+        msg: "{{ 'foo' | make_unknown }}"
+
