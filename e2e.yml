@@ -57,7 +57,7 @@
 #        msg: "{{ lookup('mylookup') }}"
 
 ###########################
-# DWCODE: conditional_empty       TEST ME!!
+# DWCODE: conditional_empty
 ###########################
 #    - name: conditional_empty
 #      debug:
@@ -74,9 +74,10 @@
 #      when: "'bar' is foo_string"
 
 ##########################################
-# DWCODE: unknown_type_encountered_handler     TEST ME!!
+# DWCODE: unknown_type_encountered_handler
 ##########################################
 
+    # set _ANSIBLE_UNKNOWN_TYPE_ENCOUNTERED=warning for 2.19+
     - name: unknown_type_encountered_handler
       debug:
         msg: "{{ 'foo' | make_unknown }}"
